@@ -1,10 +1,5 @@
 <div>
   <div>
-    <div *ngIf="selected">
-      <app-trainer-detail
-        [trainerDetail]="selectedTrainer"
-      ></app-trainer-detail>
-    </div>
     <table>
       <thead>
         <tr>
@@ -17,7 +12,8 @@
         <tr
           *ngFor="let t of trainers"
           class="row-table"
-          (click)="onSelected(t)"
+          [routerLink]="['/trainers', t.id]"
+          style="cursor: pointer;"
         >
           <td>
             <dd>{{ t.name }}</dd>
